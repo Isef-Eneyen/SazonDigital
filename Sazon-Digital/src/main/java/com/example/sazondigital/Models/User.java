@@ -2,6 +2,10 @@ package com.example.sazondigital.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import java.util.*;
 
@@ -16,11 +20,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull(message = "No puede ser nulo")
+    @Size(min = 2, max = 50, message = "El nombre debe tener entre 2 y 50 caracteres")
     private String name;
 
+    @NotNull(message = "No puede ser nulo")
+    @Email(message = "Email inválido")
     @Column(unique = true)
     private String email;
 
+    @NotNull(message = "No puede ser nulo")
+    @Min(value = 8, message = "La contraseña debe de tener mínimo 8 caracteres")
     private String password;
 
     @Temporal(TemporalType.DATE)

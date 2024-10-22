@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2024 a las 19:40:24
+-- Tiempo de generación: 22-10-2024 a las 14:12:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `comment` (
   `id` bigint(20) NOT NULL,
   `comment_date` date DEFAULT NULL,
-  `content` varchar(255) DEFAULT NULL,
+  `content` varchar(500) NOT NULL,
   `rating` int(11) NOT NULL,
   `id_recipe` bigint(20) DEFAULT NULL,
   `id_user` bigint(20) DEFAULT NULL
@@ -44,8 +44,8 @@ CREATE TABLE `comment` (
 
 CREATE TABLE `ingredient` (
   `id` bigint(20) NOT NULL,
-  `category` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `category` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -57,14 +57,14 @@ CREATE TABLE `ingredient` (
 CREATE TABLE `recipe` (
   `id` bigint(20) NOT NULL,
   `calories` double NOT NULL,
-  `category` varchar(255) DEFAULT NULL,
+  `category` varchar(255) NOT NULL,
   `creation_date` date DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
   `difficulty` int(11) NOT NULL,
-  `instructions` varchar(255) DEFAULT NULL,
+  `instructions` varchar(255) NOT NULL,
   `preparation_time` int(11) NOT NULL,
-  `rating` double NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
+  `rating` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `id_author` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -98,9 +98,9 @@ CREATE TABLE `rol` (
 
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `register_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
