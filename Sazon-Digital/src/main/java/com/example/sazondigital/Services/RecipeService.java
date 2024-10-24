@@ -9,7 +9,7 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class RecipeService {
-    private RecipeRepository recipeRepository;
+    private final RecipeRepository recipeRepository;
 
     public List<Recipe> getAllRecipes(){return recipeRepository.findAll();}
 

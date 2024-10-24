@@ -10,7 +10,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class CommentService {
 
-    private CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public List<Comment> getAllComments() {return commentRepository.findAll();}
 

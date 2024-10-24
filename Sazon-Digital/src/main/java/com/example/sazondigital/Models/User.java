@@ -18,7 +18,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @NotNull(message = "No puede ser nulo")
     @Size(min = 2, max = 50, message = "El nombre debe tener entre 2 y 50 caracteres")

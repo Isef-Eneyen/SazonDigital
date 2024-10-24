@@ -20,7 +20,7 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @NotNull(message = "No puede ser nulo")
     @Size(min = 5,max = 100, message = "El título debe tener entre 5 y 100 caracteres")

@@ -9,7 +9,7 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class IngredientService {
-    private IngredientRepository ingredientRepository;
+    private final IngredientRepository ingredientRepository;
 
     public List<Ingredient> getAllIngredients() {return ingredientRepository.findAll();}
 
